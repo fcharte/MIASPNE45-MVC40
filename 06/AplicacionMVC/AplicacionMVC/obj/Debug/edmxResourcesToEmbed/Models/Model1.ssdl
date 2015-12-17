@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BibliotecaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="BibliotecaModelStoreContainer">
+    <EntitySet Name="libros" EntityType="BibliotecaModel.Store.libros" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="prestamos" EntityType="BibliotecaModel.Store.prestamos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="socios" EntityType="BibliotecaModel.Store.socios" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="libros">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="signatura" Type="char" Nullable="false" MaxLength="10" />
+    <Property Name="titulo" Type="varchar" MaxLength="40" />
+    <Property Name="autor" Type="varchar" MaxLength="40" />
+    <Property Name="disponible" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="prestamos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="nif" Type="char" Nullable="false" MaxLength="9" />
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="prestamo" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="socios">
+    <Key>
+      <PropertyRef Name="nif" />
+    </Key>
+    <Property Name="nif" Type="char" Nullable="false" MaxLength="9" />
+    <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="apellidos" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="direccion" Type="varchar" MaxLength="30" />
+    <Property Name="cp" Type="char" MaxLength="5" />
+    <Property Name="alta" Type="datetime" Nullable="false" />
+  </EntityType>
+</Schema>

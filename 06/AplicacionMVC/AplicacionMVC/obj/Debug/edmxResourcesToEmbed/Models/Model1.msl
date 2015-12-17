@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BibliotecaModelStoreContainer" CdmEntityContainer="BibliotecaEntities1">
+    <EntitySetMapping Name="libros">
+      <EntityTypeMapping TypeName="BibliotecaModel.libros">
+        <MappingFragment StoreEntitySet="libros">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="signatura" ColumnName="signatura" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="autor" ColumnName="autor" />
+          <ScalarProperty Name="disponible" ColumnName="disponible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="prestamos">
+      <EntityTypeMapping TypeName="BibliotecaModel.prestamos">
+        <MappingFragment StoreEntitySet="prestamos">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nif" ColumnName="nif" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="prestamo" ColumnName="prestamo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="socios">
+      <EntityTypeMapping TypeName="BibliotecaModel.socios">
+        <MappingFragment StoreEntitySet="socios">
+          <ScalarProperty Name="nif" ColumnName="nif" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="cp" ColumnName="cp" />
+          <ScalarProperty Name="alta" ColumnName="alta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

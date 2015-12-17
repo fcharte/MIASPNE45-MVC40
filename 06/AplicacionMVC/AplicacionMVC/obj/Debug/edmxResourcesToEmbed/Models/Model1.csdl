@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BibliotecaModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="BibliotecaEntities1" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="libros" EntityType="BibliotecaModel.libros" />
+    <EntitySet Name="prestamos" EntityType="BibliotecaModel.prestamos" />
+    <EntitySet Name="socios" EntityType="BibliotecaModel.socios" />
+  </EntityContainer>
+  <EntityType Name="libros">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="Int32" Nullable="false" />
+    <Property Name="signatura" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+    <Property Name="titulo" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="autor" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="disponible" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+  </EntityType>
+  <EntityType Name="prestamos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="nif" Type="String" Nullable="false" MaxLength="9" Unicode="false" FixedLength="true" />
+    <Property Name="codigo" Type="Int32" Nullable="false" />
+    <Property Name="prestamo" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="socios">
+    <Key>
+      <PropertyRef Name="nif" />
+    </Key>
+    <Property Name="nif" Type="String" Nullable="false" MaxLength="9" Unicode="false" FixedLength="true" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="apellidos" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="direccion" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="cp" Type="String" MaxLength="5" Unicode="false" FixedLength="true" />
+    <Property Name="alta" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvcSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0"
+            xsi:schemaLocation="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0 MvcSiteMapSchema.xsd">
+
+  <mvcSiteMapNode title="Inicio" controller="Navega" action="Index">
+    <mvcSiteMapNode title="Novedades" controller="Navega" action="Novedades"/>
+    <mvcSiteMapNode title="Catálogo" controller="Navega" action="Catalogo" />
+    <mvcSiteMapNode title="Suscriptores" controller="Navega" action="Suscriptores">
+      <mvcSiteMapNode title="Descargas" controller="Navega" action="Descargas" />
+      <mvcSiteMapNode title="Suscripción" controller="Navega" action="Suscripcion" />
+    </mvcSiteMapNode>
+  </mvcSiteMapNode>
+
+</mvcSiteMap>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~/Default.aspx"
+    title="Anaya Multimedia" description=
+      "Página principal">
+    <siteMapNode url="~/Novedades.aspx"
+      title="Novedades" description=
+        "Últimos títulos publicados" />
+    <siteMapNode url="~/Catalogo.aspx"
+      title="Catálogo" description=
+        "Catálogo completo de títulos" />
+    <siteMapNode url="~/Suscriptores.aspx"
+      title="Suscriptores" description=
+    "Área de suscriptores al boletín editorial">
+      <siteMapNode url="~/Descargas.aspx"
+        title="Descargas" />
+      <siteMapNode url="~/Suscripcion.aspx"
+        title="Actualizar datos" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

@@ -1,0 +1,41 @@
+﻿   body { 
+     color: black;
+     background: #ffccfe;
+     font-family: Verdana,Arial,Sans-serif; 
+     margin-left: 5%; margin-right: 5%; margin-top: 2em;
+     padding: 0.2em
+   }
+
+   div#Cabecera { position: relative; height: 4em; width: 100%; padding: 0 }
+   div#Contenedor { position: relative; width: 100% }
+   div#Secciones { position: relative /*absolute; left: 0.4em*/; }
+   div#Cuerpo { margin-left: 5em /*11em*/; margin-right: 1em;   }
+   div#Cuerpo p:first-child:first-letter { font-size: 2em }
+   div#Enlaces { position: absolute; right: 0.4em; }
+   div#Pie { text-align: center }
+   
+   acronym { border-bottom: 1px dotted; cursor: help }
+
+   div#Cabecera h1 { position: absolute; top: -0.5em; left: 1em; font-size: 60px; font-family: Georgia serif; color: black; }
+   div#Cabecera h1#Sombra { top: -0.5em; left: 1.05em; color: #5252ff }
+   div#Cabecera div+div { background: #ffd6fe; padding-right: 0.3em; padding-left: 0.2em; 
+                          border-left: 1px solid; border-bottom: 1px solid; color: #fff6fe; 
+                          width: 7em; float: right; }
+   #Pie p { font-size: smaller; border-top: 2px dotted; padding-top: 0.4em }
+   #Cabecera p { font-size: smaller }
+   
+   /* Los párrafos de texto con sangrado y margen interno */
+   #Cuerpo p { text-indent: 1em; padding: 0.4em }
+
+   .Lateral { /*width: 9em; border-right: 1px dotted; border-left: 1px dotted; */
+              /*background: #ffd6fe; */margin-top: 1.5em  }
+   .Lateral p { display: inline; font-size: smaller; padding-left: 0.2em; padding-right: 0.3em; padding-bottom: 0.2em;
+                /*margin: 0.2em; border-bottom: 2px solid; */border-right: 2px solid; border-left: 2px solid; margin-left: 0.1em; margin-right: 0.1em}
+   .Lateral p:hover { background: #ffccfe; border: 1px solid;  }
+   a { text-decoration: none; border-bottom: 1px dotted }
+   a:hover { background: #ffccfe; color: #52a5ff }
+   
+   /* Clase para los textos que vayan a actuar como títulos
+     en las secciones laterales */
+   .Titulo { color: brown; font-weight: bolder }
+

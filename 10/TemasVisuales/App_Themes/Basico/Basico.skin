@@ -1,0 +1,39 @@
+<%--
+Plantilla de máscara predeterminada. Las siguientes máscaras se proporcionan sólo como ejemplos.
+
+1. Máscara de control con nombre. SkinId debería definirse de forma única porque
+no se permite que haya varios SkinId por tipo de control en el mismo tema.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Máscara predeterminada. Skinid no está definido Sólo se permite 
+   una máscara de control por tipo de control en el mismo tema.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+<asp:Menu BackColor="#B5C7DE" ForeColor="#804040" Runat="server" />
+
+<asp:Button BackColor="#B5C7DE" ForeColor="#804040" 
+   BorderStyle="Outset" BorderWidth="3px" Font-Italic="True"
+   Font-Names="Courier New" Font-Underline="True" Runat="server"
+ />
+ 
+<asp:Menu SkinId="BlancoNegro" BackColor="#000000" ForeColor="#FFFFFF" 
+   Runat="server" />
+
+<asp:Button SkinId="BlancoNegro" BackColor="#000000" ForeColor="#FFFFFF"
+   BorderStyle="Outset" BorderWidth="3px" Font-Italic="True"
+   Font-Names="Courier New" Font-Underline="True" Runat="server"
+ />
+
+<asp:Menu SkinId="Grande" Font-Size="X-Large" BackColor="#B5C7DE" 
+   ForeColor="#804040" Runat="server" />
+
+<asp:Button SkinId="Grande" BackColor="#B5C7DE" ForeColor="#804040" 
+   BorderStyle="Outset" BorderWidth="3px" Font-Italic="True"
+   Font-Names="Courier New" Font-Size="X-Large" 
+   Font-Underline="True" Runat="server"
+ />
+

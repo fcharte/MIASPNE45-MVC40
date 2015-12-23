@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BibliotecaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="BibliotecaModelStoreContainer">
+          <EntitySet Name="libros" EntityType="BibliotecaModel.Store.libros" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="prestamos" EntityType="BibliotecaModel.Store.prestamos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="socios" EntityType="BibliotecaModel.Store.socios" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="libros">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="int" Nullable="false" />
+          <Property Name="signatura" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="titulo" Type="varchar" MaxLength="40" />
+          <Property Name="autor" Type="varchar" MaxLength="40" />
+          <Property Name="disponible" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="prestamos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="nif" Type="char" Nullable="false" MaxLength="9" />
+          <Property Name="codigo" Type="int" Nullable="false" />
+          <Property Name="prestamo" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="socios">
+          <Key>
+            <PropertyRef Name="nif" />
+          </Key>
+          <Property Name="nif" Type="char" Nullable="false" MaxLength="9" />
+          <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="apellidos" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="direccion" Type="varchar" MaxLength="30" />
+          <Property Name="cp" Type="char" MaxLength="5" />
+          <Property Name="alta" Type="datetime" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BibliotecaModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BibliotecaEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="libros" EntityType="BibliotecaModel.libros" />
+          <EntitySet Name="prestamos" EntityType="BibliotecaModel.prestamos" />
+          <EntitySet Name="socios" EntityType="BibliotecaModel.socios" />
+        </EntityContainer>
+        <EntityType Name="libros">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="Int32" Nullable="false" />
+          <Property Name="signatura" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="titulo" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="autor" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="disponible" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="prestamos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="nif" Type="String" Nullable="false" MaxLength="9" Unicode="false" FixedLength="true" />
+          <Property Name="codigo" Type="Int32" Nullable="false" />
+          <Property Name="prestamo" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="socios">
+          <Key>
+            <PropertyRef Name="nif" />
+          </Key>
+          <Property Name="nif" Type="String" Nullable="false" MaxLength="9" Unicode="false" FixedLength="true" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="apellidos" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="direccion" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="cp" Type="String" MaxLength="5" Unicode="false" FixedLength="true" />
+          <Property Name="alta" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BibliotecaModelStoreContainer" CdmEntityContainer="BibliotecaEntities">
+          <EntitySetMapping Name="libros">
+            <EntityTypeMapping TypeName="BibliotecaModel.libros">
+              <MappingFragment StoreEntitySet="libros">
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="signatura" ColumnName="signatura" />
+                <ScalarProperty Name="titulo" ColumnName="titulo" />
+                <ScalarProperty Name="autor" ColumnName="autor" />
+                <ScalarProperty Name="disponible" ColumnName="disponible" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="prestamos">
+            <EntityTypeMapping TypeName="BibliotecaModel.prestamos">
+              <MappingFragment StoreEntitySet="prestamos">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nif" ColumnName="nif" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="prestamo" ColumnName="prestamo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="socios">
+            <EntityTypeMapping TypeName="BibliotecaModel.socios">
+              <MappingFragment StoreEntitySet="socios">
+                <ScalarProperty Name="nif" ColumnName="nif" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="cp" ColumnName="cp" />
+                <ScalarProperty Name="alta" ColumnName="alta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
